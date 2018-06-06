@@ -1,6 +1,3 @@
-# spring-boot
-Spring Boot Demos
-
 # Basic Demo
    - RestController
    - Banner
