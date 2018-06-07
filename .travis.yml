@@ -3,5 +3,5 @@ jdk:
   - oraclejdk8
 script:
   - cd basic && mvn clean verify
-  - cd mysql && mvn clean verify
-  - cd h2 && mvn clean verify
+  - cd ../mysql && mvn clean verify
+  - cd ../h2 && mvn clean verify
