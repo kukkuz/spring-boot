@@ -2,6 +2,6 @@ language: java
 jdk:
   - oraclejdk8
 script:
-  - cd basic & mvn clean install
-  - cd mysql & mvn clean install
-  - cd h2 & mvn clean install
+  - cd basic && mvn clean install
+  - cd mysql && mvn clean install
+  - cd h2 && mvn clean install
