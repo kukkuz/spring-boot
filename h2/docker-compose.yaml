@@ -1,0 +1,16 @@
+version: '3.6'
+services:
+  web:
+    container_name: spring-boot-h2
+    build: .
+    working_dir: /app
+    restart: always
+    env_file: dev-env.env
+    volumes:
+      - .:/app
+      - ~/.m2:/root/.m2
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+    command: mvn spring-boot:run
