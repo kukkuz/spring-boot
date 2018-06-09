@@ -1,4 +1,7 @@
-# Get Started with Spring Boot  [![Build Status](https://travis-ci.org/kukkuz/spring-boot.svg?branch=master)](https://travis-ci.org/kukkuz/spring-boot)
+# Get Started with Spring Boot  
+
+[![Build Status](https://travis-ci.org/kukkuz/spring-boot.svg?branch=master)](https://travis-ci.org/kukkuz/spring-boot)
+[![Coverage Status](https://coveralls.io/repos/github/kukkuz/spring-boot/badge.svg?branch=master)](https://coveralls.io/github/kukkuz/spring-boot?branch=master)
 
 Simple demos to get you started with Spring boot. The demos are written in Spring Boot v2.0.2. Maven is the preferred build system used in the demos. Docker is also in the mix if you prefer it. I have used projectLombok's `@Data` at some places because I was too tired of seeing the getters and setters.
 
