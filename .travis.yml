@@ -5,5 +5,5 @@ script:
   - cd basic && mvn clean verify
   - cd ../mysql && mvn clean verify
   - cd ../h2 && mvn clean verify
-after_sucess:
+after_success:
   - mvn coveralls:report
