@@ -1,7 +1,7 @@
 package com.kukkuz.springboot.basic.controller;
 
 import com.kukkuz.springboot.basic.db.model.Student;
-import com.kukkuz.springboot.basic.db.repo.StudentRepo;
+import com.kukkuz.springboot.basic.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,10 +12,10 @@ import java.util.List;
 public class Controller {
 
     @Autowired
-    private StudentRepo studentRepo;
+    private StudentService studentService;
 
     @GetMapping("/")
     public List<Student> students() {
-        return studentRepo.findAll();
+        return studentService.getStudents();
     }
 }
