@@ -7,3 +7,5 @@ script:
   - cd ../h2 && mvn clean verify
 after_success:
   - cd ../basic && mvn coveralls:report
+  - cd ../mysql && mvn coveralls:report
+  - cd ../h2 && mvn coveralls:report

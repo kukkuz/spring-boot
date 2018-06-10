@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/kukkuz/spring-boot.svg?branch=master)](https://travis-ci.org/kukkuz/spring-boot)
 [![Coverage Status](https://coveralls.io/repos/github/kukkuz/spring-boot/badge.svg?branch=master)](https://coveralls.io/github/kukkuz/spring-boot?branch=master)
 
-Get started with simple demos in Spring boot. These demos are written in Spring Boot v2.0.2. Maven is the preferred build system used in the demos. Docker is also in the mix if you prefer it. I have used projectLombok's `@Data` at some places because I was too tired of seeing the getters and setters.
+Get started with simple demos in Spring boot. These demos are written in Spring Boot v2.0.2. Maven is the preferred build system used in the demos. Docker is also in the mix if you prefer it. Demos have been unit tested and coverage reports can be generated using Jacoco.
 
 ## Basic Demo
 
@@ -36,4 +36,4 @@ You can run this demo using:
 - Maven : `mvn spring-boot:run`
 - Docker: `docker-compose build & docker-compose up`
 
-To access the database console, go to the uri `/db` and enter the credentials in `application.yaml` file. If you are running docker, see `dev-env.env` file.
+To access the database console, go to the uri `/db` and enter the credentials in `application.yaml` file. If you are running docker, see `dev-env.env` environment file.
