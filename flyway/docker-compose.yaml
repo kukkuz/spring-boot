@@ -1,0 +1,29 @@
+version: '3.6'
+services:
+  storage:
+     container_name: kukkuz-mysql
+     image: mysql
+     restart: always
+     volumes:
+       - /data/mysql:/var/lib/mysql
+     env_file: dev-env.env
+     ports:
+       - "32768:3306"
+  web:
+    container_name: spring-boot-mysql
+    build: .
+    working_dir: /app
+    restart: always
+    env_file: dev-env.env
+    volumes:
+      - .:/app
+      - ~/.m2:/root/.m2
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+    command: mvn spring-boot:run
+    depends_on:
+      - storage
+
+

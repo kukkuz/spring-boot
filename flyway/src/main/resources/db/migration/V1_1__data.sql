@@ -1,0 +1,2 @@
+insert into `student` (`address`, `age`, `email`, `name`) values('Address','30','kukkuz.com','Kukkuz');
+insert into `student` (`address`, `age`, `email`, `name`) values('Address','30','frankz.com','Frankz');

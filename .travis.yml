@@ -5,7 +5,9 @@ script:
   - cd basic && mvn clean verify
   - cd ../mysql && mvn clean verify
   - cd ../h2 && mvn clean verify
+  - cd ../flyway && mvn clean verify
 after_success:
   - cd ../basic && mvn coveralls:report
   - cd ../mysql && mvn coveralls:report
   - cd ../h2 && mvn coveralls:report
+  - cd ../flyway && mvn coveralls:report

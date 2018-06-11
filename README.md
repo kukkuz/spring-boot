@@ -13,6 +13,16 @@ You can run this demo using:
 - Maven : `mvn spring-boot:run`
 - Docker: `docker-compose build & docker-compose up`
 
+## H2 Embedded Database Demo
+
+Extends the basic demo with H2 database connection and JPA with ORM entities and repositories. H2 is an Java SQL database that is fast and has a very small footprint - you can run it as an in-memory or a file database. Note that the database is initialized at runtime using the default `schema.sql` & `data.sql` files. 
+
+You can run this demo using:
+- Maven : `mvn spring-boot:run`
+- Docker: `docker-compose build & docker-compose up`
+
+To access the database console, go to the uri `/db` and enter the credentials in `application.yaml` file. If you are running docker, see `dev-env.env` environment file.
+
 ## MySQL Demo
 
 Extends the basic demo with MySQL database connection and JPA with ORM entities and repositories. Note that the database is initialized at runtime using the default schema.sql & data.sql files. You can run this demo using:
@@ -28,12 +38,25 @@ For docker, you can access the mysql container using any of the following comman
 - `docker exec -it kukkuz-mysql mysql -uroot -p`
 - `mysql --host=127.0.0.1 --port=32768 -u root -p`
 
-## H2 Embedded Database Demo
+## MySQL Demo - with Flyway versioning
 
-Extends the basic demo with H2 database connection and JPA with ORM entities and repositories. H2 is an Java SQL database that is fast and has a very small footprint - you can run it as an in-memory or a file database. Note that the database is initialized at runtime using the default `schema.sql` & `data.sql` files. 
+Extends the basic demo with MySQL database connection and JPA with ORM entities and repositories. Note that instead of initializing the database at runtime using the default schema.sql & data.sql files, flyway is used here for SQL versioning. You can add the below maven dependency and add the SQL scripts in `db/migration` path in the `resources` root.
+
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>    
+
 
 You can run this demo using:
 - Maven : `mvn spring-boot:run`
 - Docker: `docker-compose build & docker-compose up`
 
-To access the database console, go to the uri `/db` and enter the credentials in `application.yaml` file. If you are running docker, see `dev-env.env` environment file.
+Note that you have to ensure the database "student_db" to be present in the mySQL instance (to create the database use: `CREATE DATABASE student_db`). 
+
+Access the mysql instance using:
+- `mysql -u root -p`
+
+For docker, you can access the mysql container using any of the following commands:
+- `docker exec -it kukkuz-mysql mysql -uroot -p`
+- `mysql --host=127.0.0.1 --port=32768 -u root -p`
