@@ -29,7 +29,7 @@ Extends the basic demo with MySQL database connection and JPA with ORM entities 
 - Maven : `mvn spring-boot:run`
 - Docker: `docker-compose build & docker-compose up`
 
-Note that you have to ensure the database "student" to be present in the mySQL instance (to create the database use: `CREATE DATABASE student`). 
+Note that you have to ensure the database `student` to be present in the mySQL instance (to create the database use: `CREATE DATABASE student`) and that you enter the database connection details in the `application.yaml` file (say *user* is `root` and *password* is empty).
 
 Access the mysql instance using:
 - `mysql -u root -p`
@@ -40,19 +40,19 @@ For docker, you can access the mysql container using any of the following comman
 
 ## MySQL Demo - with Flyway versioning
 
-Extends the basic demo with MySQL database connection and JPA with ORM entities and repositories. Note that instead of initializing the database at runtime using the default schema.sql & data.sql files, flyway is used here for SQL versioning. You can add the below maven dependency and add the SQL scripts in `db/migration` path in the `resources` root.
+Extends the basic demo with MySQL database connection and JPA with ORM entities and repositories. Note that instead of initializing the database at runtime using the default schema.sql & data.sql files, flyway is used here for SQL versioning. You can add the below maven dependency and add the SQL scripts in `db/migration` path in the `resources` root (also remove the *initialization mode* for the SQL scripts from the previous demo from the `application.yaml` file).
 
-        <dependency>
-            <groupId>org.flywaydb</groupId>
-            <artifactId>flyway-core</artifactId>
-        </dependency>    
+    <dependency>
+        <groupId>org.flywaydb</groupId>
+        <artifactId>flyway-core</artifactId>
+    </dependency>
 
 
 You can run this demo using:
 - Maven : `mvn spring-boot:run`
 - Docker: `docker-compose build & docker-compose up`
 
-Note that you have to ensure the database "student_db" to be present in the mySQL instance (to create the database use: `CREATE DATABASE student_db`). 
+Note that you have to ensure the database `student_db` to be present in the mySQL instance (to create the database use: `CREATE DATABASE student_db`) and that you enter the database connection details in the `application.yaml` file (say *user* is `root` and *password* is empty) 
 
 Access the mysql instance using:
 - `mysql -u root -p`
